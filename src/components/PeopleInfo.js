@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 const PeopleInfo = ({ allCsvProfiles }) => {
-  // console.log(allCsvProfiles, 'this is props')
   return (
     <table>
       <thead>
