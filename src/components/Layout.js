@@ -4,7 +4,13 @@ import './layout.css'
 const Layout = ({ children }) => {
   return (
     <div>
-      <h3 style={{ textAlign: 'center', paddingTop: '10px' }}>
+      <h3
+        style={{
+          textAlign: 'center',
+          paddingTop: '25px',
+          marginBottom: '45px',
+        }}
+      >
         MagMutual Assignment
       </h3>
       <main>{children}</main>

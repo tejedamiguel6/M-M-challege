@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import TableHead from '../Table/TableHead'
 import Table from '../Table/Table'
 
