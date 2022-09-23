@@ -10,7 +10,7 @@ const SearchByProfession = ({
 }) => {
   React.useEffect(() => {
     if (filterByProfession) {
-      console.log('component updated with values ', filterProfession)
+      console.log('component updated with values ')
     }
   }, [filterByProfession])
   return (

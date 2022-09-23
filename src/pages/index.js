@@ -5,8 +5,6 @@ import PeopleInfo from '../components/PeopleInfo'
 import SearchByName from '../components/search/SearchByName'
 import SearchByProfession from '../components/search/SearchByProfession'
 import SearchByDate from '../components/search/SearchByDate'
-// helper function for lowercasing strings
-import { lowerCase } from '../helpers/lowerCase'
 
 // calling query
 export const query = graphql`
@@ -60,16 +58,17 @@ const IndexPage = ({ data }) => {
   const filterUser = () => {
     const fullName = allCsvProfiles.filter(
       (name) =>
-        lowerCase(name.firstname) === lowerCase(formData.firstname) &&
-        lowerCase(name.lastname) === lowerCase(formData.lastname)
+        name.firstname.toLowerCase() === formData.firstname.toLowerCase() &&
+        name.lastname.toLowerCase() === formData.lastname.toLowerCase()
     )
     // filtering by first name
     const filterByFirstName = allCsvProfiles.filter(
-      (name) => lowerCase(name.firstname) === lowerCase(formData.firstname)
+      (name) =>
+        name.firstname.toLowerCase() === formData.firstname.toLowerCase()
     )
     // filtering by last name
     const filterByLastname = allCsvProfiles.filter(
-      (name) => lowerCase(name.lastname) === lowerCase(formData.lastname)
+      (name) => name.lastname.toLowerCase() === formData.lastname.toLowerCase()
     )
 
     if (formData.firstname && formData.lastname) {
@@ -84,7 +83,7 @@ const IndexPage = ({ data }) => {
   // filter by profession
   const filterByProfession = () => {
     const filterProfession = allCsvProfiles.filter(
-      (name) => name.profession === lowerCase(formData.profession)
+      (name) => name.profession === formData.profession.toLowerCase()
     )
     setFilterbyProfession(filterProfession)
   }
@@ -120,6 +119,7 @@ const IndexPage = ({ data }) => {
 
   //   console.log(dateRangeFilter, 'get the date')
   // }
+
   return (
     <div>
       <Layout>
